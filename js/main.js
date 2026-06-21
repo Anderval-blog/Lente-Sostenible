@@ -69,6 +69,28 @@ document.addEventListener("DOMContentLoaded", function() {
     const mTitulo = document.getElementById('modal-ods-titulo');
     const mPG = document.getElementById('modal-ods-pg');
     const mContribucion = document.getElementById('modal-ods-contribucion');
+    const mMediaContainer = document.querySelector('.ods-modal-media');
+
+    const coloresODS = {
+    1: "#e81f2d", // Fin de la Pobreza
+    2: "#d09f2d", // Hambre Cero
+    3: "#2b9b4a", // Salud y Bienestar
+    4: "#c42738", // Educación de Calidad
+    5: "#ed422b", // Igualdad de Género
+    6: "#00acd8", // Agua Limpia y Saneamiento
+    7: "#fbb617", // Energía Asequible y No Contaminante
+    8: "#972e47", // Trabajo Decente y Crecimiento
+    9: "#f16e25", // Industria, Innovación e Infraestructura
+    10: "#de1c84", // Reducción de las Desigualdades
+    11: "#f79c26", // Ciudades y Comunidades Sostenibles
+    12: "#cd8c2e", // Producción y Consumo Responsables
+    13: "#4e7a47", // Acción por el Clima
+    14: "#007cbb", // Vida Submarina
+    15: "#3dae4a", // Vida de Ecosistemas Terrestres
+    16: "#00578b", // Paz, Justicia e Instituciones Sólidas
+    17: "#183668", // Alianzas para los Objetivos
+    18: "#ffffff"  // Agenda 2030 (Logo General - Fondo blanco para mayor limpieza)
+};
 
     contenedorGrid.addEventListener('click', function(e) {
         const tarjetaClicada = e.target.closest('.ods-card');
@@ -89,6 +111,10 @@ document.addEventListener("DOMContentLoaded", function() {
         // Mapeo exacto a las nuevas variables
         mPG.innerText = pg;
         mContribucion.innerText = contribucion;
+
+        // --- NUEVO: APLICAR COLOR DE FONDO DINÁMICO ---
+        const colorFondo = coloresODS[num] || "#FFFFFF"; // Blanco por defecto si no se encuentra
+        mMediaContainer.style.backgroundColor = colorFondo;
 
         lightbox.classList.add('open');
     });
