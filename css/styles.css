@@ -1368,6 +1368,7 @@ body {
         padding-bottom: 75px;
     }
     
+    /* ... (aquí abajo conservas las reglas de .ods-modal-box y el fondo dinámico del modal que reparamos antes) ... */
 }
 
 /* ================= AJUSTE DE IMAGEN EN EL MODAL ODS (MÓVIL) ================= */
