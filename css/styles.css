@@ -438,6 +438,204 @@ body {
 }
 
 
+/* ================= PROYECTO HOGAR SOSTENIBLE ================= */
+.project-showcase {
+    margin-top: 60px;
+    background-color: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    padding: 50px 8%;
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.project-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.project-header h3 {
+    font-family: var(--font-titulos);
+    font-size: 2rem;
+    color: var(--text-color);
+    margin: 10px 0;
+}
+
+/* Fases del Proyecto */
+.project-phase {
+    margin-bottom: 40px;
+}
+
+.phase-meta {
+    margin-bottom: 25px;
+}
+
+.phase-meta h4 {
+    font-family: var(--font-titulos);
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+.phase-meta p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.phase-divider {
+    border: none;
+    height: 1px;
+    background-color: #F0F0F0;
+    margin: 40px 0;
+}
+
+/* Grillas e Imágenes */
+.phase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.phase-split {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.img-wrapper {
+    position: relative;
+    background-color: #F8F6F0;
+    border: 1px solid #EAEAEA;
+    overflow: hidden;
+}
+
+.zoomable-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: zoom-in; /* Indica interactividad */
+    transition: transform 0.4s ease;
+}
+
+.zoomable-img:hover {
+    transform: scale(1.03);
+}
+
+.img-caption {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.text-center { text-align: center; }
+
+/* Lista de Leyenda */
+.editorial-list {
+    list-style: none;
+    padding: 0;
+}
+
+.editorial-list li {
+    font-size: 0.9rem;
+    color: #444;
+    padding: 10px 0;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+/* ================= CARRUSEL MINIMALISTA ================= */
+.sleek-carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sleek-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 15px;
+    -ms-overflow-style: none; /* Oculta scrollbar */
+    scrollbar-width: none;
+}
+
+.sleek-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.sleek-carousel img {
+    flex: 0 0 100%; /* Cada imagen ocupa el 100% del contenedor */
+    scroll-snap-align: center;
+}
+
+.carousel-btn {
+    background: transparent;
+    border: 1px solid #EAEAEA;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background: #F8F6F0;
+}
+
+/* ================= MODAL GLOBAL (LIGHTBOX) ================= */
+.img-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.96); /* Fondo blanco casi sólido para mantener el diseño limpio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.img-modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.img-modal-overlay img {
+    max-width: 90%;
+    max-height: 90vh;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #EAEAEA;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 3rem;
+    color: var(--text-color);
+    cursor: pointer;
+    font-family: var(--font-titulos);
+}
+
+/* Adaptabilidad Móvil */
+@media (max-width: 768px) {
+    .phase-grid, .phase-split { grid-template-columns: 1fr; }
+    .project-showcase { padding: 40px 5%; }
+    .carousel-btn { display: none; } /* En móvil el usuario desliza con el dedo */
+}
+
+
 /* ================= SECCIÓN PODCAST (SPLIT LAYOUT) ================= */
 .podcast-container {
     display: flex;
@@ -1263,6 +1461,7 @@ body {
         font-size: 1.4rem;
     }
 }
+
 
 
 /* ================= RESPONSIVE DESIGN (Celulares) ================= */

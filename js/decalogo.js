@@ -66,4 +66,48 @@ document.addEventListener("DOMContentLoaded", function() {
             modal.classList.remove('open');
         }
     });
+
+    // ================= LIGHTBOX PARA IMÁGENES DEL PROYECTO =================
+    const zoomableImages = document.querySelectorAll('.zoomable-img');
+    const lightboxOverlay = document.getElementById('image-lightbox');
+    const lightboxTarget = document.getElementById('lightbox-target');
+    const closeLightboxBtn = document.querySelector('.close-lightbox');
+
+    if (lightboxOverlay) {
+        // Abrir Modal
+        zoomableImages.forEach(img => {
+            img.addEventListener('click', function() {
+                lightboxTarget.src = this.src; // Copia la fuente de la imagen clickeada
+                lightboxOverlay.classList.remove('hidden');
+            });
+        });
+
+        // Cerrar Modal con la 'X'
+        closeLightboxBtn.addEventListener('click', () => {
+            lightboxOverlay.classList.add('hidden');
+        });
+
+        // Cerrar Modal haciendo click fuera de la imagen
+        lightboxOverlay.addEventListener('click', (e) => {
+            if (e.target === lightboxOverlay) {
+                lightboxOverlay.classList.add('hidden');
+            }
+        });
+    }
+
+    // ================= CONTROL DEL CARRUSEL MINIMALISTA =================
+    const carousel = document.getElementById('project-carousel');
+    const btnPrev = document.querySelector('.prev-btn');
+    const btnNext = document.querySelector('.next-btn');
+
+    if (carousel && btnPrev && btnNext) {
+        btnNext.addEventListener('click', () => {
+            carousel.scrollBy({ left: carousel.offsetWidth, behavior: 'smooth' });
+        });
+
+        btnPrev.addEventListener('click', () => {
+            carousel.scrollBy({ left: -carousel.offsetWidth, behavior: 'smooth' });
+        });
+    }
+
 });

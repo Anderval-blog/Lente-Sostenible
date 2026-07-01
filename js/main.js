@@ -130,5 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && lightbox.classList.contains('open')) cerrarModal();
     });
+  
+    
     
 });
